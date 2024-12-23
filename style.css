@@ -15,6 +15,8 @@ body {
 .container {
     text-align: center;
     z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -23,6 +25,7 @@ h1 {
     color: #ffeb3b;
     text-shadow: 0 0 20px #ffeb3b, 0 0 40px #ff6f61;
     animation: glow 2s infinite alternate;
+    margin: 0;
 }
 
 .tagline {
@@ -36,6 +39,7 @@ h1 {
     justify-content: center;
     gap: 20px;
     margin: 20px 0;
+    flex-wrap: wrap;
 }
 
 .time-box {
@@ -45,6 +49,8 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     text-align: center;
     width: 80px;
+    flex: 1; /* Make boxes flexible */
+    max-width: 100px; /* Set a maximum width */
 }
 
 .time-box span {
@@ -110,5 +116,47 @@ canvas {
     }
     to {
         opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .countdown {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .time-box {
+        width: 60px; /* Adjust width for smaller screens */
+        max-width: 80px;
+    }
+
+    #celebrate-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .time-box {
+        width: 50px; /* Further adjust for phones */
+    }
+
+    #celebrate-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
 }
